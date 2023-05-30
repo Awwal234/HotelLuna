@@ -1,3 +1,28 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+    created(){
+        this.setAnimation()
+    },
+    methods:{
+        setAnimation(){
+            console.log('Hello');
+            window.addEventListener('scroll', function() {
+                console.log(window.pageYOffset)
+                console.log(typeof(window.pageYOffset))
+                if(window.pageYOffset == 330){
+                    console.log(window.pageYOffset)
+                    //@ts-ignore
+                    gsap.fromTo(".box", {x: -120, opacity: 0.1}, {x: 0, opacity: 1, duration: 1});
+                    //@ts-ignore
+                    gsap.fromTo(".goto", {x: 120, opacity: 0.1}, {x: 0, opacity: 1, duration: 1});
+                }else return null
+            });
+        }
+    }
+})
+</script>
+
 <template>
     <div class="pl-[100px] pr-[0px] space-x-[40px] w-full flex pt-[146px]">
         <div class="w-[40%]">
@@ -5,11 +30,11 @@
                 <span class="text-[#fff] text-[140px] leading-[140px]">A SZEL</span>
             </div>
             <div class="w-[40%] mt-[-40px] h-[60px] bg-[#fff] layerBlur"></div>
-            <div class="pt-[156px] w-[90%] h-fit font-[700] text-[#1A1B3A] text-[40px] leading-[52px]">
+            <div class="pt-[156px] w-[90%] box h-fit font-[700] text-[#1A1B3A] text-[40px] leading-[52px]">
                 Mi segítünk, hogy mindenhol
                 otthon érezd magad!
             </div>
-            <div class="rounded-[10px] cursor-pointer text-[20px] leading-[20px] text-[#252649] font-[700] mt-[46px] text-center w-[300px] py-[26px] border border-[#252649]">
+            <div class="rounded-[10px] box cursor-pointer text-[20px] leading-[20px] text-[#252649] font-[700] mt-[46px] text-center w-[300px] py-[26px] border border-[#252649]">
                 Csatlakozz hozzánk!
             </div>
         </div>
@@ -39,7 +64,7 @@
                 </div>
             </div>
             <!--goto blabala-->
-            <div class="flex space-x-[12px] mt-[57px] w-[70%]">
+            <div class="flex goto space-x-[12px] mt-[57px] w-[70%]">
                 <div class="w-[70%]">
                     <div class="text-[#252649] mb-[7px] leading-[27px] text-[20px] font-[700]">Gyorsabban, olcsóbban!</div>
                     <div class="font-[500] text-[#252649] text-[14px] leading-[18.9px]">Iratkozz fel hírlevelünkre, és a legjobb ajánlatokban részesülhetsz!</div>
