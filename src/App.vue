@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import NavView from './components/NavView.vue'
 import HeroSection from './components/HeroSection.vue'
+import FooterView from './components/FooterView.vue'
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import HeroSection from './components/HeroSection.vue'
       <NavView/>
       <HeroSection/>
     </div>
+    <FooterView/>
   </main>
 </template>
 
