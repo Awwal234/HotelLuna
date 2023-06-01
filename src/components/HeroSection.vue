@@ -8,8 +8,6 @@ export default defineComponent({
         setAnimation(){
             console.log('Hello');
             window.addEventListener('scroll', function() {
-                console.log(window.pageYOffset)
-                console.log(typeof(window.pageYOffset))
                 if(window.pageYOffset == 330){
                     console.log(window.pageYOffset)
                     //@ts-ignore
